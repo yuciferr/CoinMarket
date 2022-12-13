@@ -1,6 +1,6 @@
 package com.example.coinmarket.di
 
-import androidx.viewbinding.BuildConfig
+import com.example.coinmarket.BuildConfig
 import com.example.coinmarket.network.ApiFactory
 import com.example.coinmarket.utils.Constants.BASE_URL
 import dagger.Module
