@@ -1,15 +1,11 @@
-package com.example.coinmarket.ui
+package com.example.coinmarket.ui.home
 
-import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import androidx.fragment.app.viewModels
-import com.example.coinmarket.R
 import com.example.coinmarket.base.BaseFragment
 import com.example.coinmarket.databinding.FragmentHomeBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>
     (FragmentHomeBinding::inflate) {
     override val viewModel by viewModels<HomeViewModel>()
