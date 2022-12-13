@@ -7,7 +7,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import retrofit2.HttpException
 
-class BaseRepository {
+abstract class BaseRepository {
     suspend fun <T> safeApiRequest(
         apiRequest: suspend () ->T): NetworkResult<T>{
         return withContext(Dispatchers.IO){
