@@ -1,5 +1,7 @@
 package com.example.coinmarket.ui.home
 
+
+import android.os.Bundle
 import android.widget.Toast
 import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
@@ -17,8 +19,12 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>
     (FragmentHomeBinding::inflate) {
     override val viewModel by viewModels<HomeViewModel>()
 
-    override fun onCreateFinished() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
         viewModel.getData(API_KEY, LIMIT)
+    }
+    override fun onCreateFinished() {
+
     }
 
     override fun initializeListeners() {

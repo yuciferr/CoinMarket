@@ -1,5 +1,6 @@
 package com.example.coinmarket.network
 
+import com.example.coinmarket.model.detail.DetailResponse
 import com.example.coinmarket.model.home.CryptoResponse
 import com.example.coinmarket.utils.Constants.API_KEY
 import com.example.coinmarket.utils.Constants.BASE_URL
@@ -15,4 +16,10 @@ interface ApiFactory {
         @Header("X-CMC_PRO_API_KEY") apiKey: String,
         @Query("limit") limit: String
     ): CryptoResponse
+
+    @GET("v2/cryptocurrency/info")
+    suspend fun getDetail(
+        @Header("X-CMC_PRO_API_KEY") apiKey: String,
+        @Query("symbol") symbol: String
+    ): DetailResponse
 }
