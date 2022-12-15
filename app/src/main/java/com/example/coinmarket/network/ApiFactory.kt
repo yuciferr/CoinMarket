@@ -8,11 +8,11 @@ import retrofit2.http.Header
 import retrofit2.http.Query
 
 interface ApiFactory {
-    //https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?limit=10
+    //https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?limit=20
 
-    @GET(BASE_URL)
+    @GET("v1/cryptocurrency/listings/latest")
     suspend fun getData(
-        @Header(API_KEY) apiKey: String,
+        @Header("X-CMC_PRO_API_KEY") apiKey: String,
         @Query("limit") limit: String
     ): CryptoResponse
 }

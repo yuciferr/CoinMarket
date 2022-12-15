@@ -32,7 +32,7 @@ private fun errorBodyParser(error: String?): String{
             val errorMessage = errorResponse.status?.errorMessage
             errorMessage ?: "Unknown Error :)"
         }catch (e: Exception){
-            ""
+            "|||"
         }
     }
     return "Unknown Error :("
