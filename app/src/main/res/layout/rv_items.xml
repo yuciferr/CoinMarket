@@ -72,7 +72,6 @@
                 android:maxLength="10"
                 android:text="@{'$' + String.valueOf(coin.quote.USD.price)}"
                 android:textSize="16sp"
-                android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -81,7 +80,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
-                android:maxLength="4"
+                android:maxLength="5"
                 android:text="@{String.valueOf(coin.quote.USD.percentChange24h)}"
                 android:textSize="20sp"
                 app:layout_constraintEnd_toStartOf="@+id/percent"

@@ -56,6 +56,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>
                     Navigation.findNavController(requireView()).navigate(navigation)
                 }
 
+
             }
         })
         binding.rvHome.adapter = mAdapter

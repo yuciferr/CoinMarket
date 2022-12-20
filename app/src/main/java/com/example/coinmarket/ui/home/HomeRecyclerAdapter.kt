@@ -1,10 +1,12 @@
 package com.example.coinmarket.ui.home
 
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.coinmarket.databinding.RvItemsBinding
 import com.example.coinmarket.model.home.Data
+import kotlin.math.roundToInt
 
 class HomeRecyclerAdapter(private val listener: ItemClickListener): RecyclerView.Adapter<HomeRecyclerAdapter.MViewHolder>() {
 
@@ -15,7 +17,19 @@ class HomeRecyclerAdapter(private val listener: ItemClickListener): RecyclerView
         fun bind(listener: ItemClickListener, coin: Data){
             binding.onItemClickListener = listener
             binding.coin = coin
+            coin.quote?.uSD?.percentChange24h?.let { setColor(it) }
             binding.executePendingBindings()
+        }
+        private fun setColor(percent: Double){
+            val rounded = (percent * 100.0).roundToInt() / 100.0
+           if(rounded>0){
+               binding.coinPriceChange.setTextColor(Color.GREEN)
+               binding.percent.setTextColor(Color.GREEN)
+
+           }else if (rounded<0){
+               binding.coinPriceChange.setTextColor(Color.RED)
+               binding.percent.setTextColor(Color.RED)
+           }
         }
 
         companion object{

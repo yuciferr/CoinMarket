@@ -60,6 +60,7 @@ class DetailFragment : BaseFragment<FragmentDetailBinding, DetailViewModel>(
                 tvDetailTitle.text = it.name
                 tvDetailSymbol.text = it.symbol
                 tvDetailDescription.text = it.description
+                website.text = it.urls?.website.toString()
             }
         }
     }
