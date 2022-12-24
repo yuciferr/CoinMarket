@@ -23,4 +23,9 @@
             android:name="symbol"
             app:argType="string" />
     </fragment>
+    <fragment
+        android:id="@+id/exchangesFragment"
+        android:name="com.example.coinmarket.ui.exchanges.ExchangesFragment"
+        android:label="fragment_exchanges"
+        tools:layout="@layout/fragment_exchanges" />
 </navigation>

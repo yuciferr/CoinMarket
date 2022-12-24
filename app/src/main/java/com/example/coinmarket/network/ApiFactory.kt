@@ -2,8 +2,6 @@ package com.example.coinmarket.network
 
 import com.example.coinmarket.model.detail.DetailResponse
 import com.example.coinmarket.model.home.CryptoResponse
-import com.example.coinmarket.utils.Constants.API_KEY
-import com.example.coinmarket.utils.Constants.BASE_URL
 import retrofit2.http.GET
 import retrofit2.http.Header
 import retrofit2.http.Query
@@ -22,4 +20,10 @@ interface ApiFactory {
         @Header("X-CMC_PRO_API_KEY") apiKey: String,
         @Query("symbol") symbol: String
     ): DetailResponse
+
+    @GET("v1/exchange/listings/latest")
+    suspend fun getExchanges(
+        @Header("X-CMC_PRO_API_KEY") apiKey: String,
+        @Query("limit") limit: Int,
+    ): ExchangesResponse
 }
